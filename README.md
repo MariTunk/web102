@@ -41,7 +41,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='' />
+<img src='https://submissions.us-east-1.linodeobjects.com/web102/2INO7iDJ.gif' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  
