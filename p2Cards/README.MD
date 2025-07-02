@@ -1,4 +1,4 @@
-# Web Development Project 2 - *iSLAMIC HISTORY CARDS*
+# Web Development Project 2 - *ISLAMIC HISTORY CARDS*
 
 Submitted by: **Mariyam Tunkara**
 
