@@ -1,0 +1,122 @@
+/* Background & Container */
+body {
+  background-color: #fff0f5; /* light blush */
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* full viewport height */
+}
+
+.App {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  max-width: 720px;
+
+  /* Remove margin auto because body flex centers it */
+  /* margin: 40px auto; */
+
+  /* Add flex column and center content inside App */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Headings */
+h1 {
+  color: #d81b60; /* pink */
+  margin-bottom: 0.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+h2 {
+  color: #ad1457; /* blush */
+  margin-bottom: 1.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+/* Form styling */
+form input,
+form textarea {
+  border: 0px solid #f8bbd0;
+  padding: 10px;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  background-color: #fffafa;
+  box-sizing: border-box;
+}
+
+form button {
+  background-color: #ec407a;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background-color: #d81b60;
+}
+
+/* Card styling */
+.card {
+  background-color: #fce4ec;
+  border: 1px solid #f8bbd0;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+  /* Center text inside each card */
+  text-align: center;
+}
+
+/* Card list as grid with vertical flow in columns */
+.card-list {
+  
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 20px; /* space between cards */
+    max-width: 750px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    justify-items: center; /* center cards horizontally in each grid cell */
+  
+}
+
+.card h3 {
+  color: #ad1457;
+  margin-bottom: 4px;
+  font-size: 1.2rem;
+}
+
+.card p {
+  color: #444;
+  margin: 6px 0;
+}
+
+.card a {
+  color: #d81b60;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}

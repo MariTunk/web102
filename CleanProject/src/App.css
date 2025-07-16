@@ -1,0 +1,57 @@
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh; 
+  max-width: 1000px;
+  margin: 5 auto;
+  padding: 20rem;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #abc2c2;
+}
+
+
+.main-layout {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.cat-section {
+  flex: 3;
+}
+
+.ban-sidebar {
+  flex: 1;
+  background-color: #36787e;
+  padding: 1rem;
+  border-left: 2px solid #2c1f48;
+  height: fit-content;
+}
+
+.cat-card {
+  background: #36787e;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.cat-image {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.clickable {
+  cursor: pointer;
+  color: #2c1f48;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.clickable:hover {
+  color: #005fa3;
+}
