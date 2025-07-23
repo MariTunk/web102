@@ -1,0 +1,195 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: light dark;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  background-color: #242424;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+/* Layout + Base */
+body {
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #625e94;
+}
+
+/* App container */
+.App {
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Dashboard grid layout */
+.dashboard-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+/* Weather grid of cards */
+.weather-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr)); /* increased min width */
+  gap: 4rem; /* increased spacing between cards */
+  padding-bottom: 2rem;
+}
+
+/* Individual card */
+.card {
+  background: #76b2d7;
+  padding: 1.5rem; /* slightly more padding */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  color: #fff;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem; /* fix the spacing between elements */
+
+
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  margin: 0 0 1rem;
+}
+
+.card p {
+  margin: 0.25rem 0;
+}
+
+/* Charts section */
+.charts {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 3rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #000;
+}
+
+/* Search + filter controls */
+.Search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.Search input[type="text"],
+.Search select {
+  padding: 0.5rem 1rem;
+  border: 2px solid #196697;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #000;
+  outline: none;
+}
+
+.Search input[type="text"] {
+  width: 240px;
+}
+
+/* Dashboard stats */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.stats p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Navigation and text styles */
+a {
+  font-weight: 500;
+  color: #64b5ff;
+  text-decoration: none;
+}
+a:hover {
+  color: #46a0f5;
+}
+
+h1 {
+  font-size: 2.8rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Buttons */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  background-color: #1a1a1a;
+  color: white;
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+  background-color: #333;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Light mode support */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  body {
+    background-color: #f0f2fa;
+  }
+
+  a {
+    color: #3b52c6;
+  }
+
+  a:hover {
+    color: #505cf5;
+  }
+
+  button {
+    background-color: #e0e0e0;
+    color: #000;
+  }
+}
