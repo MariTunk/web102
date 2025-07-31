@@ -1,0 +1,196 @@
+/* Container */
+.app {
+  max-width: 960px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* Section Titles */
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input[type="text"] {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="submit"],
+button {
+  padding: 0.5rem 1rem;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type="submit"]:hover,
+button:hover {
+  background-color: #003f8a;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fceaff; /* soft pink hero glow */
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(127, 188, 255, 0.3); /* gentle blue shadow */
+}
+
+input[type="text"] {
+  padding: 0.8rem;
+  border: 2px solid #ffd6f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #333;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #7fbcff;
+  box-shadow: 0 0 4px #7fbcff;
+}
+
+button {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #7fbcff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #5fa3e7;
+}
+
+button:last-of-type {
+  background-color: #ff6b7f;
+}
+
+button:last-of-type:hover {
+  background-color: #e6586f;
+}
+
+/* Container for homepage content */
+.home-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Page title styling */
+h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Section card styles */
+.card {
+  background-color: #f9f9ff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.01);
+}
+
+/* Button styles */
+button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  background-color: #7fbcff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #5fa3e7;
+}
+.app {
+  font-family: 'Segoe UI', sans-serif;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #333;
+}
+
+/* Navigation */
+nav {
+  background-color: #e1efff;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+nav a {
+  color: #1e90ff;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Title */
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+/* 404 Not Found Styling */
+div:not(.app) {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+div:not(.app) h2 {
+  font-size: 2rem;
+  color: #ff6b7f;
+}
+
+div:not(.app) p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+div:not(.app) a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  background-color: #7fbcff;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+}
