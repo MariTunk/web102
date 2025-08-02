@@ -194,3 +194,16 @@ div:not(.app) a {
   border-radius: 6px;
   text-decoration: none;
 }
+
+.crew-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.crew-card {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}

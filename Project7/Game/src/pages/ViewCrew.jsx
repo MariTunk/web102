@@ -11,28 +11,35 @@ function ViewCrew() {
     const fetchCrewmate = async () => {
       const { data, error } = await supabase
         .from('crewmates')
-        .select('*') // Explicitly select all columns
-        .eq('id', Number(id)) // Cast to number to avoid type mismatch
-        .single();
+        .select('*') // Select all fields explicitly
+        .eq('id', Number(id)) // Ensure ID type match
+        .maybeSingle(); // Gracefully handle no result
 
       if (error) {
         console.error('Error fetching crewmate:', error);
-        setLoading(false);
-      } else {
-        console.log('Fetched crewmate:', data);
-        setCrewmate(data);
-        setLoading(false);
+        console.info('Supabase response data:', data);
+      } else if (!data) {
+        console.warn(`No crewmate found with ID: ${id}`);
       }
+
+      setCrewmate(data);
+      setLoading(false);
     };
 
     fetchCrewmate();
   }, [id]);
 
-  if (loading) return <p>Loading crewmate details...</p>;
+  if (loading) {
+    return (
+      <section aria-busy="true">
+        <p>Loading crewmate details...</p>
+      </section>
+    );
+  }
 
   if (!crewmate) {
     return (
-      <div>
+      <div role="alert">
         <h2>🚫 Crewmate not found</h2>
         <p>We couldn't locate a crewmate with ID: {id}</p>
         <Link to="/">🔙 Back to crew list</Link>
@@ -41,8 +48,8 @@ function ViewCrew() {
   }
 
   return (
-    <div>
-      <h2>Name: {crewmate.name || 'Unnamed Crewmate'}</h2>
+    <div role="region" aria-labelledby="crewmate-name">
+      <h2 id="crewmate-name">Name: {crewmate.name || 'Unnamed Crewmate'}</h2>
       <p>Attributes: {crewmate.attributes || 'No attributes available'}</p>
       <p>Power Source: {crewmate.power_source || 'Unknown'}</p>
       <p>Skills: {crewmate.skills || 'None listed'}</p>
@@ -57,3 +64,4 @@ function ViewCrew() {
 }
 
 export default ViewCrew;
+// This code defines a React component that fetches and displays details of a specific crewmate from a Supabase database.

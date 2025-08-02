@@ -19,26 +19,25 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <nav>
-          <Link to="/">Home</Link> |{' '}
-          <Link to="/create">Create Crewmate</Link> |{' '}
-          <Link to="/crewmate/1/edit">Edit Crewmate</Link> |{' '}
-          <Link to="/crewmate/1">View Crewmate</Link> |{' '}
-        
-        </nav>
-        <h1>Space Crew Management</h1>
-        <p>You can create your very own set of superheros before sending them off to save the world!</p>
-        <p>Click on the links above to navigate through the application.</p>
+        <header>
+          <h1>Space Crew Management</h1>
+          <p>You can create your very own set of superheros before sending them off to save the world!</p>
+          <nav>
+            <Link to="/">Home</Link> |{' '}
+            <Link to="/create">Create Crewmate</Link> |{' '}
+            <Link to="/crewmate/1/edit">Edit Crewmate</Link>
+          </nav>
+        </header>
 
-        
-
-        <Routes>
-          <Route path="/" element={<ReadCrew />} />
-          <Route path="/create" element={<CreateCrew />} />
-          <Route path="/crewmate/:id" element={<ViewCrew />} /> 
-          <Route path="/crewmate/:id/edit" element={<UpdateCrew />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <main>
+          <Routes>
+            <Route path="/" element={<ReadCrew />} />
+            <Route path="/create" element={<CreateCrew />} />
+            <Route path="/crewmate/:id" element={<ViewCrew />} />
+            <Route path="/crewmate/:id/edit" element={<UpdateCrew />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
       </div>
     </Router>
   );

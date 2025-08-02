@@ -1,77 +1,85 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { supabase } from '../client';
 
 function CreateCrew() {
-  const [crewmate, setCrewmate] = useState({ name: '', attributes: '',power_source: '', skills: '', core_value: '', origin_story: '' });
+  const navigate = useNavigate();
+
+  const [crewmate, setCrewmate] = useState({
+    name: '',
+    power_source: '',
+    skills: '',
+    core_value: '',
+    origin_story: ''
+  });
+
+  const handleChange = (field) => (e) => {
+    setCrewmate({ ...crewmate, [field]: e.target.value });
+  };
 
   const createCrew = async (event) => {
     event.preventDefault();
 
-    await supabase
+    const { error } = await supabase
       .from('crewmates')
-      .insert({
-        title: crewmate.name,
-        author: crewmate.attributes
-      })
-      .select();
+      .insert([crewmate]);
 
-    window.location = "/";
+    if (error) {
+      console.error('Insert error:', error);
+    } else {
+      navigate('/'); 
+    }
   };
 
   return (
     <form onSubmit={createCrew}>
+      <label htmlFor="name">Name:</label>
       <input
+        id="name"
         type="text"
-        placeholder="Name"
         value={crewmate.name}
-        onChange={(e) =>
-          setCrewmate({ ...crewmate, name: e.target.value })
-        }
+        onChange={handleChange('name')}
+        required
       />
+
+
+      <label htmlFor="power_source">Power Source:</label>
       <input
+        id="power_source"
         type="text"
-        placeholder="Attributes"
-        value={crewmate.attributes}
-        onChange={(e) =>
-          setCrewmate({ ...crewmate, attributes: e.target.value })
-        }
-      />
-      <input
-        type="text"
-        placeholder="power_source"
         value={crewmate.power_source}
-        onChange={(e) =>
-          setCrewmate({ ...crewmate, power_source: e.target.value })
-        }
+        onChange={handleChange('power_source')}
+        required
       />
+
+      <label htmlFor="skills">Skills:</label>
       <input
+        id="skills"
         type="text"
-        placeholder="skills"
         value={crewmate.skills}
-        onChange={(e) =>
-          setCrewmate({ ...crewmate, skills: e.target.value })
-        }
+        onChange={handleChange('skills')}
       />
+
+      <label htmlFor="core_value">Core Value:</label>
       <input
+        id="core_value"
         type="text"
-        placeholder="core_value"
         value={crewmate.core_value}
-        onChange={(e) =>
-          setCrewmate({ ...crewmate, core_value: e.target.value })
-        }
+        onChange={handleChange('core_value')}
       />
-      <input
-        type="text"
-        placeholder="origin_story"
+
+      <label htmlFor="origin_story">Origin Story:</label>
+      <textarea
+        id="origin_story"
         value={crewmate.origin_story}
-        onChange={(e) =>
-          setCrewmate({ ...crewmate, origin_story: e.target.value })
-        }
+        onChange={handleChange('origin_story')}
+        rows={4}
       />
-      <input type="submit" value="Submit" />
+
+      <button type="submit">🚀 Create Crewmate</button>
     </form>
   );
 }
 
 export default CreateCrew;
-// This code defines a React component for creating a new crewmate in a game.
+
